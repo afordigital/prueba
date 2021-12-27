@@ -6,7 +6,7 @@ import { FaFacebookSquare, FaLinkedin, FaInstagram, FaUser, FaEnvelope, FaPhoneA
 
 export default function Home () {
   return (
-    <div>
+    <div className='overflow-x-hidden'>
       <Head>
         <title>Alessio Muganni</title>
         <link rel='icon' href='/favicon.ico' />
