@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+
+@font-face {
+  font-family: 'Poppins';
+  src: local('Poppins'), url(/public/Poppins-Light.ttf) format('ttf');
+}
+
+@tailwind utilities;
