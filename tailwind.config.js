@@ -1,3 +1,4 @@
+
 module.exports = {
   mode: 'jit',
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
@@ -10,10 +11,10 @@ module.exports = {
       fontFamily: {
         'sans-serif': ['Poppins', 'Helvetica', 'Arial', 'sans-serif']
       }
-    }
-  },
-  variants: {
-    extend: {}
-  },
-  plugins: []
+    },
+    variants: {
+      extend: {}
+    },
+    plugins: []
+  }
 }
