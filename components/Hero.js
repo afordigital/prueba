@@ -6,7 +6,7 @@ const Hero = () => {
     <div id='hero' class='h-screen w-screen relative'>
       <div class='bg-black absolute top-0 h-screen w-screen z-10 bg-opacity-30'>
         <Image
-          src='/public/hero-cover.jpg'
+          src='/hero-cover.jpg'
           layout='fill'
           objectFit='cover'
         />
