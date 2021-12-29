@@ -9,7 +9,7 @@ import Footer from '../components/Footer'
 
 export default function Home () {
   return (
-    <div className='min-h-screen min-w-screen overflow-x-hidden'>
+    <div className='min-h-screen min-w-screen overflow-x-hidden font-poppins'>
       <Head>
         <title>Alessio Muganni</title>
       </Head>
