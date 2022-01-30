@@ -5,7 +5,7 @@ const Footer = () => {
     <div>
       <div
         id='footer'
-        className='hidden sm:block w-screen bg-gray-300 mt-8 text-xl tracking-wide'
+        className='hidden md:block w-screen bg-gray-300 mt-8 text-xl tracking-wide'
       >
         <div className='w-full max-w-7xl mx-auto flex flex-row px-4 py-8 font-semibold'>
           <p>Alessio Muganni</p>
@@ -27,7 +27,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className='sm:hidden w-screen bg-gray-300 mt-8 text-xl tracking-wide text-center text-gray-800'>
+      <div className='md:hidden w-screen bg-gray-300 mt-8 text-xl tracking-wide text-center text-gray-800'>
         <div className='w-full max-w-4xl flex flex-col py-8 font-semibold gap-y-3'>
           <p>Alessio Muganni</p>
           <div className='flex flex-col gap-y-2'>

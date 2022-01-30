@@ -8,22 +8,22 @@ const ContactForm = () => {
     <>
       <div id='contact' className='w-full max-w-7xl mx-auto text-gray-800'>
         <div className='pl-8 pr-8 pb-8 pt-4 md:p-4 md:pt-20 md:pb-20'>
-          <h2 className='text-4xl xl:text-5xl font-semibold tracking-wide xl:tracking-wider'>
+          <h2 className='mb-5 justify-left text-4xl xl:text-5xl xl:mb-4 lg:mb-2 font-semibold tracking-wider'>
             CONTACT FORM
           </h2>
           <div className='w-full grid grid-cols-2'>
             <div className='col-span-2 md:col-span-1 relative min-h-[200px] md:min-h-none pt-2'>
-              <h2 className='text-justify text-md pt-2 sm:text-lg md:text-xl lg:text-base xl:text-2xl 2xl:text-xl'>
+              <h2 className='text-justify text-base xl:text-xl 2xl:text-1xl mb-6'>
                 Now that you know a lot about me, let me know if you are
                 interested to work with me.
               </h2>
               <img
                 src='/maps-alessio.JPG'
-                className='w-full pt-8 pb-8 rounded-lg'
+                className='w-full pt-2 pb-2 lg:pt-8 lg:pb-8 rounded-lg'
               />
             </div>
             <div className='col-span-2 md:col-span-1'>
-              <div className='tracking-wider md:pl-16 md:pr-20 text-md sm:text-lg md:text-xl lg:text-base xl:text-2xl 2xl:text-xl'>
+              <div className='tracking-wider md:pl-8 lg:pl-16 lg:pr-20 text-md sm:text-lg md:text-xl lg:text-base xl:text-2xl 2xl:text-xl'>
                 <Formik
                   initialValues={{
                     name: '',
@@ -91,7 +91,7 @@ const ContactForm = () => {
                             Name
                           </label>
                         </div>
-                        <div className='bg-blue-100 w-full h-14 rounded-lg mt-3 mb-4 shadow-lg'>
+                        <div className='bg-blue-100 w-full h-10 lg:h-14 rounded-lg mt-3 mb-4 shadow-lg'>
                           <Field
                             type='text'
                             id='name'
@@ -100,7 +100,7 @@ const ContactForm = () => {
                             className='decoration-none bg-blue-100 rounded-lg pl-3 w-full h-full'
                           />
                         </div>
-                        <div className='text-red-600 pb-3 font-weight: 600'>
+                        <div className='text-red-600 pb-1 lg:pb-3 font-weight: 600'>
                           <ErrorMessage
                             name='name'
                             component={() => (
@@ -119,7 +119,7 @@ const ContactForm = () => {
                             Email
                           </label>
                         </div>
-                        <div className='bg-blue-100 w-full h-14 rounded-lg mt-3 mb-4 shadow-lg'>
+                        <div className='bg-blue-100 w-full h-10 lg:h-14 rounded-lg mt-3 mb-4 shadow-lg'>
                           <Field
                             type='text'
                             id='email'
@@ -128,7 +128,7 @@ const ContactForm = () => {
                             className='decoration-none bg-blue-100 rounded-lg pl-3 w-full h-full'
                           />
                         </div>
-                        <div className='text-red-600 pb-3 font-weight: 600'>
+                        <div className='text-red-600 pb-1 lg:pb-3 font-weight: 600'>
                           <ErrorMessage
                             name='email'
                             component={() => (
@@ -147,7 +147,7 @@ const ContactForm = () => {
                             Number (Optional)
                           </label>
                         </div>
-                        <div className='bg-blue-100 w-full h-14 rounded-lg mt-3 mb-4 shadow-lg'>
+                        <div className='bg-blue-100 w-full h-10 lg:h-14 rounded-lg mt-3 mb-4 shadow-lg'>
                           <Field
                             type='text'
                             id='number'
@@ -156,7 +156,7 @@ const ContactForm = () => {
                             className='decoration-none bg-blue-100 rounded-lg pl-3 w-full h-full'
                           />
                         </div>
-                        <div className='text-red-600 pb-3 font-weight: 600'>
+                        <div className='text-red-600 pb-1 lg:pb-3 font-weight: 600'>
                           <ErrorMessage
                             name='number'
                             component={() => (
@@ -175,7 +175,7 @@ const ContactForm = () => {
                             Message
                           </label>
                         </div>
-                        <div className='bg-blue-100 w-full h-24 rounded-lg mt-3 mb-4 shadow-lg'>
+                        <div className='bg-blue-100 w-full h-18 lg:h-24 rounded-lg mt-3 mb-4 shadow-lg'>
                           <Field
                             name='message'
                             as='textarea'
@@ -183,7 +183,7 @@ const ContactForm = () => {
                             className='decoration-none bg-blue-100 rounded-lg pl-3 pt-2 w-full h-full'
                           />
                         </div>
-                        <div className='text-red-600 pb-3 font-weight: 600'>
+                        <div className='text-red-600 pb-1 lg:pb-3 font-weight: 600'>
                           <ErrorMessage
                             name='message'
                             component={() => (
@@ -204,7 +204,7 @@ const ContactForm = () => {
                             Accept Terms and Conditions
                           </label>
                         </div>
-                        <div className='text-red-600 pb-3 font-weight: 600'>
+                        <div className='text-red-600 pb-1 lg:pb-3font-weight: 600'>
                           <ErrorMessage
                             name='terms'
                             component={() => (
