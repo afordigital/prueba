@@ -1,7 +1,6 @@
 import { FaUser, FaEnvelope, FaPhoneAlt, FaCommentAlt } from 'react-icons/fa'
 import React, { useState } from 'react'
 import Map from './Map'
-// import Credentials from './Credentials'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 
 const mapURL =
