@@ -29,7 +29,7 @@ const ContactForm = () => {
               />
             </div>
             <div className='col-span-2 md:col-span-1'>
-              <div className='tracking-wider md:pl-8 lg:pl-16 pt-10 lg:pr-20 text-md sm:text-lg md:text-xl lg:text-base xl:text-2xl 2xl:text-xl'>
+              <div className='tracking-wider md:pl-8 lg:pl-16 pt-10 sm:pt-0 lg:pr-20 text-md sm:text-lg md:text-xl lg:text-base xl:text-2xl 2xl:text-xl'>
                 <Formik
                   initialValues={{
                     name: '',
@@ -203,6 +203,7 @@ const ContactForm = () => {
                           <label className='w-full'>
                             <Field
                               type='checkbox'
+                              id='terms'
                               className='w-5 h-5 mr-3'
                               name='terms'
                               value='terms'
