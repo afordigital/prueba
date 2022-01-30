@@ -8,16 +8,16 @@ const Nav = () => {
       id='nav'
       className='absolute top-0 h-screen w-screen z-20 overflow-x-hidden'
     >
-      <div className='hidden h-screen w-full max-w-7xl mx-auto text-white lg:flex flex-row pt-8 p-4 tracking-wider text-3xl'>
-        <p>Alessio Muganni</p>
-        <div className='flex flex-row ml-auto cursor-pointer gap-4'>
-          <div className='hover:text-gray-200 hover:font-medium'>
+      <div className='hidden h-screen w-full max-w-7xl mx-auto text-white lg:flex flex-row pt-8 p-4 tracking-wider'>
+        <p className='text-3xl'>Alessio Muganni</p>
+        <div className='flex flex-row ml-auto cursor-pointer gap-4 text-2xl '>
+          <div className='hover:underline hover:underline-offset-4'>
             <Link href='/'>HOME</Link>
           </div>
-          <div className='hover:text-gray-200 hover:font-medium'>
+          <div className='hover:underline hover:underline-offset-4'>
             <Link href='/about'>ABOUT ME</Link>
           </div>
-          <div className='hover:text-gray-200 hover:font-medium'>
+          <div className='hover:underline hover:underline-offset-4'>
             <Link href='/contact'>CONTACT</Link>
           </div>
         </div>

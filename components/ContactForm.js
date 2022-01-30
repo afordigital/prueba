@@ -1,6 +1,11 @@
 import { FaUser, FaEnvelope, FaPhoneAlt, FaCommentAlt } from 'react-icons/fa'
 import React, { useState } from 'react'
+import Map from './Map'
+// import Credentials from './Credentials'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
+
+const mapURL =
+  'https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCCTGNeJgjIaxnzy-3zwJdhC-BXTuBUsoA'
 
 const ContactForm = () => {
   const [submittedForm, changeSubmittedForm] = useState(false)
@@ -17,9 +22,11 @@ const ContactForm = () => {
                 Now that you know a lot about me, let me know if you are
                 interested to work with me.
               </h2>
-              <img
-                src='/maps-alessio.JPG'
-                className='w-full pt-2 pb-2 lg:pt-8 lg:pb-8 rounded-lg'
+              <Map
+                googleMapURL={mapURL}
+                containerElement={<div style={{ height: '400px' }} />}
+                mapElement={<div style={{ height: '100%' }} />}
+                loadingElement={<p>Loading</p>}
               />
             </div>
             <div className='col-span-2 md:col-span-1'>

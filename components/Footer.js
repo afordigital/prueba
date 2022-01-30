@@ -10,18 +10,18 @@ const Footer = () => {
         <div className='w-full max-w-7xl mx-auto flex flex-row px-4 py-8 font-semibold'>
           <p>Alessio Muganni</p>
           <div className='ml-auto flex flex-col md:flex-row cursor-pointer gap-12 text-xl'>
-            <p>Home</p>
-            <p>About me</p>
-            <p>Contact</p>
+            <p className='hover:text-gray-700'>Home</p>
+            <p className='hover:text-gray-700'>About me</p>
+            <p className='hover:text-gray-700'>Contact</p>
           </div>
           <div className='ml-auto flex flex-col md:flex-row cursor-pointer gap-12'>
-            <p>
+            <p className='hover:text-gray-700'>
               <FaFacebookSquare />{' '}
             </p>
-            <p>
+            <p className='hover:text-gray-700'>
               <FaLinkedin />{' '}
             </p>
-            <p>
+            <p className='hover:text-gray-700'>
               <FaInstagram />{' '}
             </p>
           </div>
