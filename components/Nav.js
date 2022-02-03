@@ -23,10 +23,10 @@ const Nav = () => {
         </div>
       </div>
       <div className='lg:hidden flex flex-row absolute text-xl sm:text-4xl sm:gap-80'>
-        <div className='flex-1 flex-row w-96 max-w-4xl mx-auto text-white pt-6 p-8 tracking-wider'>
+        <div className='flex-1 flex-row w-96 max-w-4xl mx-auto sm:text-3xl text-white pt-6 p-8 tracking-wider'>
           <p>Alessio Muganni</p>
         </div>
-        <div className='flex-1 flex-row pt-8 p-8 w-64 text-white'>
+        <div className='flex-1 flex-row pt-8 p-8 w-44 sm:w-64 sm:text-3xl text-white'>
           <FaBars />
         </div>
       </div>
