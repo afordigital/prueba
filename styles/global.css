@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scroll-behavior: smooth;
+}
+
+.offset {
+  text-underline-offset: 8px;
+}
+
+@layer components {
+  .primaryInput {
+    @apply py-2 shadow-lg bg-blue-100 rounded-lg pl-3  w-full h-full focus:outline-none focus:border-2 focus:border-blue-500;
+  }
+}
