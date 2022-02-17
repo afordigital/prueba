@@ -9,7 +9,7 @@ const Footer = () => {
       >
         <div className='w-full max-w-7xl mx-auto flex flex-row px-4 py-8 font-semibold'>
           <p>Alessio Muganni</p>
-          <div className='ml-auto flex flex-col md:flex-row cursor-pointer gap-12 text-xl'>
+          <div className='ml-auto flex flex-col md:flex-row cursor-pointer space-x-8 text-xl'>
             <p className='hover:text-gray-700'>Home</p>
             <p className='hover:text-gray-700'>About me</p>
             <p className='hover:text-gray-700'>Contact</p>

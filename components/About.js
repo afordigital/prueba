@@ -1,8 +1,8 @@
 import Link from 'next/link'
 
-const About = () => {
+export const About = ({ refProp }) => {
   return (
-    <div id='about'>
+    <div id='about' ref={refProp}>
       <div
         id='about'
         className='hidden sm:block w-full max-w-7xl mx-auto p-4 pt-20 text-gray-800'
@@ -30,7 +30,7 @@ const About = () => {
                 nesciunt.{' '}
               </h3>
               <div className='text-center p-3 justify-center text-4 :text-base xl:text-xl cursor-pointers tracking-wider'>
-                <nav className='w-full h-12 pt-2 bg-blue-500 text-gray-50 rounded-full shadow-xl hover:bg-blue-700  ease-in duration-200'>
+                <nav className='btn-primary'>
                   <Link href='/timeline'>VIEW MY PORTFOLIO</Link>
                 </nav>
               </div>
@@ -68,5 +68,3 @@ const About = () => {
     </div>
   )
 }
-
-export default About

@@ -2,15 +2,32 @@ import { FaUser, FaEnvelope, FaPhoneAlt, FaCommentAlt } from 'react-icons/fa'
 import React, { useState } from 'react'
 import Map from './Map'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
+import * as Yup from 'yup'
+
+const FormSchema = Yup.object().shape({
+  name: Yup.string().required('Required'),
+  email: Yup.string()
+    .email('Please input valid email')
+    .required('Required'),
+  number: Yup.number(),
+  message: Yup.string().required('Required'),
+  terms: Yup.boolean()
+    .oneOf([true], 'Please accept our terms and conditions')
+    .required('Required')
+})
 
 const mapURL =
   'https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCCTGNeJgjIaxnzy-3zwJdhC-BXTuBUsoA'
 
-const ContactForm = () => {
+const ContactForm = ({ refProp }) => {
   const [submittedForm, changeSubmittedForm] = useState(false)
   return (
     <>
-      <div id='contact' className='w-full max-w-7xl mx-auto text-gray-800'>
+      <div
+        id='contact'
+        className='w-full max-w-7xl mx-auto text-gray-800'
+        ref={refProp}
+      >
         <div className='pl-8 pr-8 pb-8 pt-4 md:p-4 md:pt-20 md:pb-20'>
           <h2 className='mb-5 justify-left text-4xl xl:text-5xl xl:mb-4 lg:mb-2 font-semibold tracking-wider'>
             CONTACT FORM
@@ -38,54 +55,14 @@ const ContactForm = () => {
                     message: '',
                     terms: ''
                   }}
-                  validate={valores => {
-                    const errores = {}
-
-                    // Name Validation
-                    if (!valores.name) {
-                      errores.name = 'Name must be filled out'
-                    } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.name)) {
-                      errores.name = 'Please enter a valid name'
-                    }
-
-                    // Email Validation
-                    if (!valores.email) {
-                      errores.email = 'Email address must be filled out'
-                    } else if (
-                      !/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(
-                        valores.email
-                      )
-                    ) {
-                      errores.email = 'Please enter a valid email address'
-                    }
-
-                    // Number Validation
-                    if (
-                      !/^[0-9]{2,3}-? ?[0-9]{6,7}$/.test(valores.number) &&
-                      valores.number !== ''
-                    ) {
-                      errores.number = 'Please specify a valid phone number'
-                    }
-
-                    // Message Validation
-                    if (!valores.message) {
-                      errores.message = 'Message must be filled out'
-                    }
-
-                    // Terms and Conditions Validation
-                    if (!valores.terms) {
-                      errores.terms = 'Terms and Conditions must be accepted'
-                    }
-
-                    return errores
-                  }}
-                  onSubmit={(valores, { resetForm }) => {
+                  validationSchema={FormSchema}
+                  onSubmit={({ values, resetForm }) => {
                     resetForm()
                     changeSubmittedForm(true)
                     setTimeout(() => changeSubmittedForm(false), 5000)
                   }}
                 >
-                  {({ errors }) => (
+                  {({ values, errors, handleChange, setFieldValue }) => (
                     <Form className='formulario'>
                       <div>
                         <div className='inline-flex'>
@@ -102,8 +79,9 @@ const ContactForm = () => {
                             type='text'
                             id='name'
                             name='name'
+                            onChange={handleChange}
                             placeholder='Name'
-                            className='decoration-none bg-blue-100 rounded-lg pl-3 w-full h-full'
+                            className='primaryInput'
                           />
                         </div>
                         <div className='text-red-600 pb-1 lg:pb-3 font-weight: 600'>
@@ -130,8 +108,9 @@ const ContactForm = () => {
                             type='text'
                             id='email'
                             name='email'
+                            onChange={handleChange}
                             placeholder='Email Address'
-                            className='decoration-none bg-blue-100 rounded-lg pl-3 w-full h-full'
+                            className='primaryInput'
                           />
                         </div>
                         <div className='text-red-600 pb-1 lg:pb-3 font-weight: 600'>
@@ -154,12 +133,13 @@ const ContactForm = () => {
                           </label>
                         </div>
                         <div className='bg-blue-100 w-full h-10 lg:h-14 rounded-lg mt-3 mb-4 shadow-lg'>
-                          <Field
+                          <input
                             type='text'
                             id='number'
                             name='number'
+                            onChange={handleChange}
                             placeholder='Phone'
-                            className='decoration-none bg-blue-100 rounded-lg pl-3 w-full h-full'
+                            className='primaryInput'
                           />
                         </div>
                         <div className='text-red-600 pb-1 lg:pb-3 font-weight: 600'>
@@ -181,12 +161,13 @@ const ContactForm = () => {
                             Message
                           </label>
                         </div>
-                        <div className='bg-blue-100 w-full h-18 lg:h-24 rounded-lg mt-3 mb-4 shadow-lg'>
-                          <Field
+                        <div className=' w-full h-18 lg:h-24 rounded-lg '>
+                          <textarea
                             name='message'
                             as='textarea'
                             placeholder='Message'
-                            className='decoration-none bg-blue-100 rounded-lg pl-3 pt-2 w-full h-full'
+                            onChange={handleChange}
+                            className='primaryInput'
                           />
                         </div>
                         <div className='text-red-600 pb-1 lg:pb-3 font-weight: 600'>
@@ -203,7 +184,16 @@ const ContactForm = () => {
                           <label className='w-full'>
                             <Field
                               type='checkbox'
+                              onChange={() => {
+                                if (values.terms) {
+                                  setFieldValue('terms', false)
+                                }
+                                if (!values.terms) {
+                                  setFieldValue('terms', true)
+                                }
+                              }}
                               id='terms'
+                              checked={values.terms}
                               className='w-5 h-5 mr-3'
                               name='terms'
                               value='terms'
