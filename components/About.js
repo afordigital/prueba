@@ -30,7 +30,7 @@ export const About = ({ refProp }) => {
                 nesciunt.{' '}
               </h3>
               <div className='text-center p-3 justify-center text-4 :text-base xl:text-xl cursor-pointers tracking-wider'>
-                <nav className='btn-primary'>
+                <nav className='btn-primary w-full h-12 pt-2 bg-blue-500 text-gray-50 rounded-full shadow-xl hover:bg-blue-700  ease-in duration-200'>
                   <Link href='/timeline'>VIEW MY PORTFOLIO</Link>
                 </nav>
               </div>

@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 import { FaBars } from 'react-icons/fa'
 
 const Nav = ({ aboutRef, contactRef }) => {
