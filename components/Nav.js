@@ -9,7 +9,7 @@ const Nav = ({ aboutRef, contactRef }) => {
     >
       <div className='hidden h-screen w-full max-w-7xl mx-auto text-white lg:flex flex-row pt-8 p-4 tracking-wider'>
         <p className='text-3xl'>Alessio Muganni</p>
-        <div className='flex flex-row ml-auto cursor-pointer gap-4 text-2xl '>
+        <div className='flex flex-row ml-auto cursor-pointer gap-4 text-2xl h-10'>
           <div
             className='hover:underline offset cursor-pointer'
             onClick={() => {
